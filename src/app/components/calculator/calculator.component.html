@@ -1,0 +1,41 @@
+<div class="w-full flex justify-center items-center overflow-auto" id="container-calc">
+
+    <div class="max-w-4/12 max-h-3/4 p-2 rounded-xl shadow-xl shadow-neutral-400 bg-violet-blue relative overflow-clip">
+        <app-menu-calculator [opArr]="history" (mouseover)="toggleMenu(true)" (mouseout)="toggleMenu(false)" class="w-3/4 h-full overflow-visible absolute top-0 left-0 transition-all duration-500" [style.transform]="'translateX(' + widthMenu + '%)'"></app-menu-calculator>
+        <div class="w-full p-3 flex justify-between items-center flex-row" id="div_func-menu">
+            <button (mouseover)="toggleMenu(true)" (mouseout)="toggleMenu(false)" class="w-4 aspect-square flex justify-between flex-col">
+                <div class="w-full border-white border-t-2"></div>
+                <div class="w-full border-white border-t-2"></div>
+                <div class="w-full border-white border-t-2"></div>
+            </button>
+            <button class="w-4 aspect-square">
+                <div class="w-full border-white border-t-2 rotate-45"></div>
+                <div class="w-full border-white border-t-2 -rotate-45"></div>
+            </button>
+        </div>
+        <div class="w-full px-2 my-1" id="div_func-res">
+            <input type="text" [(ngModel)]="view" class="w-full py-3 rounded-xl bg-slate-600 focus-visible:outline-none text-right caret-transparent px-3">
+        </div>
+        <div class="w-full p-3 rounded-2xl mt-3 grid gap-2 grid-cols-4 grid-rows-4 items-center" id="div_func-op">
+            <button (click)="clear()" class="col-span-2 aspect-auto h-full bg-red-strong btn-number">Borrar</button>
+            <button (click)="delete()" class="aspect-square bg-red-strong btn-number"><</button>
+            <button (click)="operation('+')" class="aspect-square bg-yellow-light btn-number">+</button>
+            <button (click)="addNum(1)" class="aspect-square bg-red-strong btn-number">1</button>
+            <button (click)="addNum(2)" class="aspect-square bg-red-strong btn-number">2</button>
+            <button (click)="addNum(3)" class="aspect-square bg-red-strong btn-number">3</button>
+            <button (click)="operation('-')" class="aspect-square bg-yellow-light btn-number">-</button>
+            <button (click)="addNum(4)" class="aspect-square bg-red-strong btn-number">4</button>
+            <button (click)="addNum(5)" class="aspect-square bg-red-strong btn-number">5</button>
+            <button (click)="addNum(6)" class="aspect-square bg-red-strong btn-number">6</button>
+            <button (click)="operation('*')" class="aspect-square bg-yellow-light btn-number">x</button>
+            <button (click)="addNum(7)" class="aspect-square bg-red-strong btn-number">7</button>
+            <button (click)="addNum(8)" class="aspect-square bg-red-strong btn-number">8</button>
+            <button (click)="addNum(9)" class="aspect-square bg-red-strong btn-number">9</button>
+            <button (click)="operation('/')" class="aspect-square bg-yellow-light btn-number">/</button>
+            <button (click)="addNum(0)" class="aspect-square bg-red-strong btn-number">0</button>
+            <button (click)="addNum('.')" class="aspect-square bg-red-strong btn-number">.</button>
+            <button (click)="result()" class="col-span-2 h-full aspect-auto bg-yellow-light btn-number">=</button>
+        </div>
+    </div>
+
+</div>

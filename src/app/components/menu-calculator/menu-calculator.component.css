@@ -1,0 +1,15 @@
+.menu{
+    box-shadow: 2px 0 6px rgba(0, 0, 0, .3);
+}
+
+.btn-opti{
+    overflow: clip;
+    padding: 0.5rem;
+    transition: all .5s;
+    border-radius: 12px;
+}
+
+.btn-opti:hover{
+    background: #DB162F;
+    color: white;
+}

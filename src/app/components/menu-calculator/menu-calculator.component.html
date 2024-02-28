@@ -1,0 +1,16 @@
+<div class="w-full h-full p-4 bg-violet-blue menu">
+    <ol>
+        <li>
+            <button class="w-full mb-2 bg-yellow-light btn-opti" (click)="openHistory()" >
+                <i class="las la-history mr-1"></i>
+                <span>History</span>
+            </button>
+        </li>
+    </ol>
+    <div class=""> {{ opArr }} </div>
+    <app-history
+        [style.transform]="'translateX(' + historyDiv + '%)'"
+        class="w-3/4 h-full overflow-visible absolute top-0 left-0 transition-all duration-500"
+        [history]="opArr">
+    </app-history>
+</div>

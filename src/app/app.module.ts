@@ -1,16 +1,38 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { NavComponent } from './components/nav/nav.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { ProyectsComponent } from './components/proyects/proyects.component';
+import { RouterModule, Routes } from '@angular/router';
+import { MenuCalculatorComponent } from './components/menu-calculator/menu-calculator.component';
+import { HistoryComponent } from './components/history/history.component';
+
+const appRouting:Routes=[
+
+  {path: '', component:MenuComponent},
+  {path: 'proyects', component:ProyectsComponent},
+  {path: 'proyects/calculator', component:CalculatorComponent},
+
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavComponent,
+    CalculatorComponent,
+    MenuComponent,
+    ProyectsComponent,
+    MenuCalculatorComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    RouterModule.forRoot(appRouting)
   ],
   providers: [],
   bootstrap: [AppComponent]
